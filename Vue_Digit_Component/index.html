@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数字输入框组件</title>
+	<meta charset="utf-8">
+	<!--script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+        <p>当前的值：{{currentValue}}</p>
+        <digit-component 
+            :current-value="currentValue" 
+            :max-value="maxValue" 
+            :min-value="minValue" 
+            v-model="currentValue"></digit-component>
+	</div>
+
+	<script type="text/javascript" src="vue.js" setup></script>
+    <script type="text/javascript" src="digit_component.js"></script>   
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+ 
