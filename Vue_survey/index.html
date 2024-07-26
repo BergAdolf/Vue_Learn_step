@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数字输入框组件</title>
+	<meta charset="utf-8">
+	<!--script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app">
+		
+		<div class="main">
+			<template v-if="page === 1">
+				<div>1.请问您的性别是：</div>
+				<!-- <select v-model="selected1" multiple>
+					<option>男</option>
+					<option>女</option>
+					<option>保密</option>
+				</select> -->
+				<input type="checkbox" v-model="checked1" value="1" id="man">
+				<label for="man">男</label>
+				<br>
+				<input type="checkbox" v-model="checked1" value="2" id="woman">
+				<label for="woman">女</label>
+				<br>
+				<input type="checkbox" v-model="checked1" value="3" id="keepSecret">
+				<label for="keepSecret">保密</label>
+			</template>
+			<template v-else-if="page === 2">
+				<div>2.请选择您的兴趣爱好：</div>
+				<!-- <select v-model="selected2" multiple>
+					<option>看书</option>
+					<option>游泳</option>
+					<option>跑步</option>
+					<option>看电影</option>
+					<option>听音乐</option>
+				</select> -->
+				<input type="checkbox" v-model="checked2" value="1" id="book">
+				<label for="book">看书</label>
+				<br>
+				<input type="checkbox" v-model="checked2" value="2" id="swim">
+				<label for="swim">游泳</label>
+				<br>
+				<input type="checkbox" v-model="checked2" value="3" id="running">
+				<label for="running">跑步</label>
+				<br>
+				<input type="checkbox" v-model="checked2" value="4" id="movie">
+				<label for="movie">看电影</label>
+				<br>
+				<input type="checkbox" v-model="checked2" value="5" id="music">
+				<label for="music">听音乐</label>
+			</template>
+			<template v-else>
+				<div>3.请介绍一下自己：</div>
+				<textarea v-model="text" placeholder="不少于100字"></textarea>
+			</template>
+		</div>
+		
+		<div class="control">
+			<template v-if="page === 1" class="button1">
+				<mybutton @on-click="nextPage" :button-able="checked1.length === 0">下一步</mybutton>
+				<mybutton @on-click="reset">重置</mybutton>
+			</template>
+			<template v-else-if="page === 2" class="button2">
+				<mybutton @on-click="nextPage" :button-able="checked2.length <= 1">下一步</mybutton>
+				<mybutton @on-click="backPage" >上一步</mybutton>
+				<mybutton @on-click="reset">重置</mybutton>
+			</template>
+			<template v-else class="button2">
+				<mybutton @on-click="nextPage" :button-able="text.length < 100">提交</mybutton>
+				<mybutton @on-click="backPage">上一步</mybutton>
+				<mybutton @on-click="reset">重置</mybutton>
+			</template>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="vue.js" setup></script>
+    <script type="text/javascript" src="survey.js"></script>   
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
