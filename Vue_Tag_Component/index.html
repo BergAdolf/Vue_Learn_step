@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数字输入框组件</title>
+	<meta charset="utf-8">
+	<!--script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script-->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="app" v-cloak>
+        <button @click="transferPage(1)">标签页1</button>
+		<button @click="transferPage(2)">标签页2</button>
+		<button @click="transferPage(3)">标签页3</button>
+		<br/>
+		<div v-show="pageNumber === 1">标签页1的内容</div>
+		<div v-show="pageNumber === 2">标签页2的内容</div>
+		<div v-show="pageNumber === 3">标签页3的内容</div>
+
+	</div>
+
+	<script type="text/javascript" src="vue.js" setup></script>
+    <script type="text/javascript" src="digit_component.js"></script>   
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+ 

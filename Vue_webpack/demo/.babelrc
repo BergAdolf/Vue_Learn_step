@@ -1,0 +1,7 @@
+// without options
+{
+    "plugins": ["transform-runtime"],
+    "presets": ["es2015"],
+    "comments": false
+}
+  
